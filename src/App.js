@@ -53,7 +53,7 @@ class App extends Component {
         </header>
         <HeaderForm header={this.state.header} changePHeader={this.changeHeader}/>
         <div className='white-card'>
-        <Search orgItmes={this.state.allItems} changePFilterInfo={this.changeFilterInfo}/>
+        <Search orgItems={this.state.allItems} changePFilterInfo={this.changeFilterInfo}/>
 
         <ul>
           {itemList}
