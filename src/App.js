@@ -28,6 +28,20 @@ class App extends Component {
       return this.state.allItems
     }
   }
+
+  //use this function to change filtered value true or false.
+  changeFilterInfo = (arr) => {
+    if (arr == []) {
+      this.setState({
+        filterd: false
+      })
+    } else {
+      this.setState({
+        filtered: true,
+        filteredItems: arr
+      })
+    }
+  }
   render () {
     let itemList = this.arraySelection().map((item, index) => <Item name={item.name} key={index+1} />)
     return (
@@ -39,7 +53,7 @@ class App extends Component {
         </header>
         <HeaderForm header={this.state.header} changePHeader={this.changeHeader}/>
         <div className='white-card'>
-        <Search />
+        <Search orgItmes={this.state.allItems} changePFilterInfo={this.changeFilterInfo}/>
 
         <ul>
           {itemList}
